@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'
 import { Route, Switch } from 'react-router-dom';
 
+import store from './store'
 import Login from './pages/login'
 import Register from './pages/register'
 
 import PrimaryLayout from './layouts/PrimaryLayout'
+import AuthorizedRoute from './components/AuthorizedRoute'
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Provider store={store}>
         <Switch>
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
-          <Route component={PrimaryLayout}></Route>
+          <AuthorizedRoute path='/home' component={PrimaryLayout}></AuthorizedRoute>
         </Switch>
-      </div>
+      </Provider>
     );
   }
 }

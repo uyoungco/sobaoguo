@@ -1,31 +1,27 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import NavLinkBar from '../../components/navlink'
 
 import HomeSubLayout from '../HomeSubLayout'
 import SettingSubLayout from '../SettingSubLayout'
 import UserSubLayout from '../UserSubLayout'
+import ItemData from '../../components/itemData'
 
 
-
-class PrimaryLayout extends React.Component {
-  render() {
-
-    return(
-      <div>
-        <div style={{ marginTop: 10 }}>
-          <Switch>
-            <Route path='/home' exact component={HomeSubLayout} />
-            <Route path='/setting' component={SettingSubLayout} />
-            <Route path='/user' component={UserSubLayout} />
-          </Switch>
-         
-        </div>
-        <NavLinkBar></NavLinkBar>
-      </div>
-    )
-  }
-}
+const PrimaryLayout = ({ match }) => (
+  <div className="primary-layout">
+    <main>
+      <Switch>
+        <Route path={`${match.path}`} exact component={HomeSubLayout} />
+        <Route path={`${match.path}/setting`} component={SettingSubLayout} />
+        <Route path={`${match.path}/user`} component={UserSubLayout} />
+        <Route path={`${match.path}/item_data`} component={ItemData} />
+        <Redirect to={`${match.url}`} />
+      </Switch>
+    </main>
+    <NavLinkBar />
+  </div>
+)
 
 export default PrimaryLayout

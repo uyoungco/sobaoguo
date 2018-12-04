@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-class Itemdata extends React.Component {
+class Gmima extends React.Component {
   constructor(props) {
     super(props)
-    console.log('Itemdata 初始化')
+    console.log('Gmima 初始化')
   }
   
   render() {
-    console.log( 'Itemdata' ,this.props)
+    console.log( 'Gmima' ,this.props)
     return (
       <div>
-        Itemdata
+        Gmima
       </div>
     )
   }
 }
 
-export default Itemdata
+export default Gmima

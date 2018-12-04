@@ -5,12 +5,26 @@ import { Switch, Route } from 'react-router-dom'
 // import BrowseUsersPage from '../pages/BrowseUsersPage'
 import Home from '../../components/home'
 import ItemData from '../../components/itemData'
+import UserNav from '../UserNav'
+
+console.log('HomeSubLayout')
+// const HomeSubLayout = ({ match }) => (
+//   <Switch>
+//     <Route path={match.path} exact component={Home} />
+//     <Route path={`${match.path}/item/_data`} component={ItemData} />
+//   </Switch>
+// )
+
 
 const HomeSubLayout = ({ match }) => (
-  <Switch>
-    <Route path={match.path} exact component={Home} />
-    <Route path={`${match.path}/item_data`} component={ItemData} />
-  </Switch>
+  <div className="user-sub-layout">
+    <UserNav />
+    <div className="primary-content">
+      <Switch>
+        <Route path={match.path} exact component={Home} />
+      </Switch>
+    </div>
+  </div>
 )
 
 export default HomeSubLayout

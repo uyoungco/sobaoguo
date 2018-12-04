@@ -18,13 +18,13 @@ class NavLinkBar extends React.Component {
         title: '用户HOME'
       },
       {
-        path: '/setting',
+        path: '/home/setting',
         text: '官网设置',
         icon: 'msg',
         title: '消息列表'
       },
       {
-        path: '/user',
+        path: '/home/user',
         text: '账号设置',
         icon: 'user',
         title: '用户设置'
