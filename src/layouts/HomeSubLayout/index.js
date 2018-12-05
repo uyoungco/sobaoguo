@@ -5,7 +5,6 @@ import { Switch, Route } from 'react-router-dom'
 // import BrowseUsersPage from '../pages/BrowseUsersPage'
 import Home from '../../components/home'
 import ItemData from '../../components/itemData'
-import UserNav from '../UserNav'
 
 console.log('HomeSubLayout')
 // const HomeSubLayout = ({ match }) => (
@@ -18,7 +17,6 @@ console.log('HomeSubLayout')
 
 const HomeSubLayout = ({ match }) => (
   <div className="user-sub-layout">
-    <UserNav />
     <div className="primary-content">
       <Switch>
         <Route path={match.path} exact component={Home} />

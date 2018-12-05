@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import store from './store'
 import Login from './pages/login'
@@ -17,6 +17,7 @@ class App extends Component {
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
           <AuthorizedRoute path='/home' component={PrimaryLayout}></AuthorizedRoute>
+          <Redirect to="/login" />
         </Switch>
       </Provider>
     );
